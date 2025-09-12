@@ -1,0 +1,50 @@
+[
+  {
+    "TIMESTAMP": "2025-09-10 AM 04:32:17",
+    "INPUT": "test",
+    "OUTPUT": "dGVzdA==",
+    "CIPHER": "Base64"
+  },
+  {
+    "TIMESTAMP": "2025-09-10 AM 04:32:25",
+    "INPUT": "dGVzdA==",
+    "OUTPUT": "test",
+    "CIPHER": "Base64"
+  },
+  {
+    "TIMESTAMP": "2025-09-10 AM 04:32:46",
+    "INPUT": "i love my parents sooo much ",
+    "OUTPUT": "NEQGY33WMUQG26JAOBQXEZLOORZSA43PN5XSA3LVMNUCA===",
+    "CIPHER": "Base32"
+  },
+  {
+    "TIMESTAMP": "2025-09-10 AM 04:32:51",
+    "INPUT": "NEQGY33WMUQG26JAOBQXEZLOORZSA43PN5XSA3LVMNUCA===",
+    "OUTPUT": "i love my parents sooo much ",
+    "CIPHER": "Base32"
+  },
+  {
+    "TIMESTAMP": "2025-09-10 AM 05:49:31",
+    "INPUT": "i love motaz",
+    "OUTPUT": "aSBsb3ZlIG1vdGF6",
+    "CIPHER": "Base64"
+  },
+  {
+    "TIMESTAMP": "2025-09-10 PM 22:47:21",
+    "INPUT": "game dev is so cool",
+    "OUTPUT": "Z2FtZSBkZXYgaXMgc28gY29vbA==",
+    "CIPHER": "Base64"
+  },
+  {
+    "TIMESTAMP": "2025-09-10 PM 22:47:29",
+    "INPUT": "Z2FtZSBkZXYgaXMgc28gY29vbA==",
+    "OUTPUT": "game dev is so cool",
+    "CIPHER": "Base64"
+  },
+  {
+    "TIMESTAMP": "2025-09-11 AM 04:09:35",
+    "INPUT": "I love hackclub",
+    "OUTPUT": "SSBsb3ZlIGhhY2tjbHVi",
+    "CIPHER": "Base64"
+  }
+]
