@@ -3,10 +3,10 @@ package main
 import (
 	"CryptoGUI/Base"
 	"CryptoGUI/Binary"
+	"CryptoGUI/Hashing"
 	"CryptoGUI/Hex"
+	HistoryFs "CryptoGUI/History"
 	"CryptoGUI/JOSN"
-
-	"time"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
@@ -37,7 +37,6 @@ func main() {
 	ciphers := []string{"Base64", "Base32", "Hex", "Binary"}
 	drop := widget.NewSelect(ciphers, func(s string) {
 		current = s
-
 	})
 	drop.PlaceHolder = "Select Cipher"
 	drop.Move(fyne.NewPos(35, 190))
@@ -68,27 +67,7 @@ func main() {
 		default:
 			view.SetText("Choose a Chipher!!")
 		}
-		if in.Text != "" && view.Text != "Choose a Chipher!!" {
-			time := time.Now().Format("2006-01-02 PM 15:04:05")
-			first := in.Text
-			second := view.Text
-			Third := current
-			History.Add(widget.NewButton(time, func() {
-				INPUT.SetText(first)
-				OUTPUT.SetText(second)
-				CIPHER.SetText(Third)
-			}))
-			History.Refresh()
-			newrow := JOSN.History{
-				DateNtime: time,
-				INPUT:     in.Text,
-				OUTPUT:    view.Text,
-				CIPHER:    current,
-			}
-			historyload = append(historyload, newrow)
-			JOSN.Save(historyload)
-
-		}
+		HistoryFs.HistoryF(in, view, current, History, INPUT, OUTPUT, CIPHER)
 
 	})
 	decode.Resize(fyne.NewSize(95, 47))
@@ -107,26 +86,7 @@ func main() {
 		default:
 			view.SetText("Choose a Chipher!!")
 		}
-		if in.Text != "" && view.Text != "Choose a Chipher!!" {
-			time := time.Now().Format("2006-01-02 PM 15:04:05")
-			first := in.Text
-			second := view.Text
-			Third := current
-			History.Add(widget.NewButton(time, func() {
-				INPUT.SetText(first)
-				OUTPUT.SetText(second)
-				CIPHER.SetText(Third)
-			}))
-			History.Refresh()
-			newrow := JOSN.History{
-				DateNtime: time,
-				INPUT:     in.Text,
-				OUTPUT:    view.Text,
-				CIPHER:    current,
-			}
-			historyload = append(historyload, newrow)
-			JOSN.Save(historyload)
-		}
+		HistoryFs.HistoryF(in, view, current, History, INPUT, OUTPUT, CIPHER)
 	})
 	encode.Resize(fyne.NewSize(95, 47))
 	encode.Move(fyne.NewPos(170, 495))
@@ -161,6 +121,7 @@ func main() {
 	tabs := container.NewAppTabs(
 		container.NewTabItem("Tool", container1),
 		container.NewTabItem("History", container2),
+		container.NewTabItem("Hashing", Hashing.Hashing(History, INPUT, OUTPUT, CIPHER)),
 	)
 	w.SetContent(tabs)
 	w.SetFixedSize(true)

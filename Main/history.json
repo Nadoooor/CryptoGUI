@@ -1,50 +1,92 @@
 [
   {
-    "TIMESTAMP": "2025-09-10 AM 04:32:17",
+    "TIMESTAMP": "2025-09-13 AM 03:54:21",
+    "INPUT": "testingg",
+    "OUTPUT": "dGVzdGluZ2c=",
+    "CIPHER": "Base64"
+  },
+  {
+    "TIMESTAMP": "2025-09-13 AM 03:54:26",
+    "INPUT": "dGVzdGluZ2c=",
+    "OUTPUT": "testingg",
+    "CIPHER": "Base64"
+  },
+  {
+    "TIMESTAMP": "2025-09-13 AM 03:56:09",
+    "INPUT": "TESTING",
+    "OUTPUT": "VEVTVElORw==",
+    "CIPHER": "Base64"
+  },
+  {
+    "TIMESTAMP": "2025-09-13 AM 04:21:14",
+    "INPUT": "i hope it works this time",
+    "OUTPUT": "4d67b4bef8b01666b6ece7bd9f5b050a",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-13 AM 04:24:20",
+    "INPUT": "ياارب",
+    "OUTPUT": "a6e248d8",
+    "CIPHER": "FNV-1a 32bit"
+  },
+  {
+    "TIMESTAMP": "2025-09-13 AM 04:27:28",
     "INPUT": "test",
-    "OUTPUT": "dGVzdA==",
+    "OUTPUT": "5b366b0243851c72d957c30be3638d1a",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-13 AM 04:28:28",
+    "INPUT": "testing",
+    "OUTPUT": "f59f81b6",
+    "CIPHER": "FNV-1a 32bit"
+  },
+  {
+    "TIMESTAMP": "2025-09-13 AM 04:47:08",
+    "INPUT": "cvxxxxxxxxx",
+    "OUTPUT": "59b07e7c",
+    "CIPHER": "FNV-1a 32bit"
+  },
+  {
+    "TIMESTAMP": "2025-09-13 AM 04:48:28",
+    "INPUT": "testttttt",
+    "OUTPUT": "dGVzdHR0dHR0",
     "CIPHER": "Base64"
   },
   {
-    "TIMESTAMP": "2025-09-10 AM 04:32:25",
-    "INPUT": "dGVzdA==",
-    "OUTPUT": "test",
+    "TIMESTAMP": "2025-09-13 AM 04:48:38",
+    "INPUT": "dGVzdHR0dHR0",
+    "OUTPUT": "testttttt",
     "CIPHER": "Base64"
   },
   {
-    "TIMESTAMP": "2025-09-10 AM 04:32:46",
-    "INPUT": "i love my parents sooo much ",
-    "OUTPUT": "NEQGY33WMUQG26JAOBQXEZLOORZSA43PN5XSA3LVMNUCA===",
-    "CIPHER": "Base32"
+    "TIMESTAMP": "2025-09-13 AM 04:49:56",
+    "INPUT": "testtttttttt",
+    "OUTPUT": "b81298f2",
+    "CIPHER": "FNV-1a 32bit"
   },
   {
-    "TIMESTAMP": "2025-09-10 AM 04:32:51",
-    "INPUT": "NEQGY33WMUQG26JAOBQXEZLOORZSA43PN5XSA3LVMNUCA===",
-    "OUTPUT": "i love my parents sooo much ",
-    "CIPHER": "Base32"
-  },
-  {
-    "TIMESTAMP": "2025-09-10 AM 05:49:31",
-    "INPUT": "i love motaz",
-    "OUTPUT": "aSBsb3ZlIG1vdGF6",
+    "TIMESTAMP": "2025-09-13 AM 04:57:21",
+    "INPUT": "testing",
+    "OUTPUT": "dGVzdGluZw==",
     "CIPHER": "Base64"
   },
   {
-    "TIMESTAMP": "2025-09-10 PM 22:47:21",
-    "INPUT": "game dev is so cool",
-    "OUTPUT": "Z2FtZSBkZXYgaXMgc28gY29vbA==",
+    "TIMESTAMP": "2025-09-13 AM 04:57:26",
+    "INPUT": "dGVzdGluZw==",
+    "OUTPUT": "testing",
     "CIPHER": "Base64"
   },
   {
-    "TIMESTAMP": "2025-09-10 PM 22:47:29",
-    "INPUT": "Z2FtZSBkZXYgaXMgc28gY29vbA==",
-    "OUTPUT": "game dev is so cool",
-    "CIPHER": "Base64"
+    "TIMESTAMP": "2025-09-13 AM 04:57:51",
+    "INPUT": "HOPE IT WORKS NOWWWWWWWWWWWWWWWW",
+    "OUTPUT": "fb4d1a05d27ab35c1ae0cec69910870472484ed6",
+    "CIPHER": "SHA1"
   },
   {
-    "TIMESTAMP": "2025-09-11 AM 04:09:35",
-    "INPUT": "I love hackclub",
-    "OUTPUT": "SSBsb3ZlIGhhY2tjbHVi",
-    "CIPHER": "Base64"
+    "TIMESTAMP": "2025-09-13 AM 04:59:38",
+    "INPUT": "OMG",
+    "OUTPUT": "9e46fc40a6afd22d2862cb714a7a4bb72f1288b3d0f70c9f31be4e0b838d2f8ea3adfc54de6a4e3fa04179548485d918",
+    "CIPHER": "SHA384"
   }
 ]

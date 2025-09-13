@@ -16,13 +16,14 @@ func Save(things []History) {
 
 	data, _ := json.MarshalIndent(things, "", "  ")
 	os.WriteFile("history.json", data, 0644)
+	println("saved")
 }
 
 func Load() []History {
 	here, _ := os.ReadFile("history.json")
 	var history []History
 	json.Unmarshal(here, &history)
-
+	println("loaded")
 	return history
 
 }
