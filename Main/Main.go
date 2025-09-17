@@ -76,11 +76,14 @@ func main() {
 		default:
 			view.SetText("Choose a Chipher!!")
 		}
+		// adding the information to the history window
 		HistoryFs.HistoryF(in, view, current, History, INPUT, OUTPUT, CIPHER)
 
 	})
+	// moving and resizing the decode button
 	decode.Resize(fyne.NewSize(95, 47))
 	decode.Move(fyne.NewPos(35, 495))
+	// the encode button
 	encode := widget.NewButton("Encode", func() {
 		switch current {
 
@@ -95,11 +98,13 @@ func main() {
 		default:
 			view.SetText("Choose a Chipher!!")
 		}
+		// adding the encoding information to the history window this time
 		HistoryFs.HistoryF(in, view, current, History, INPUT, OUTPUT, CIPHER)
 	})
-
+	// moving and resizing the encode button
 	encode.Resize(fyne.NewSize(95, 47))
 	encode.Move(fyne.NewPos(170, 495))
+	// adding all the history buttons and info to the windows from the json file
 	for _, Each := range historyload {
 		History.Add(widget.NewButton(Each.DateNtime, func() {
 			INPUT.SetText(Each.INPUT)
@@ -109,15 +114,19 @@ func main() {
 
 	}
 	History.Refresh()
+	// the first container for the ciphers encoding and decoding section maybe i should move this all to a separite package
 	container1 := container.NewWithoutLayout(back, in, view, drop, decode, encode)
+	// adding all the tabs to the app so i can choose whatever i want.
 	tabs := container.NewAppTabs(
 		container.NewTabItem("Tool", container1),
 		container.NewTabItem("Brute", Brute.Bruter(w)),
 		container.NewTabItem("History", HistoryWin),
 		container.NewTabItem("Hashing", Hashing.Hashing(History, INPUT, OUTPUT, CIPHER)),
 	)
+	// setting all the code into fyne gui to show
 	w.SetContent(tabs)
 	w.SetFixedSize(true)
+	// just resizing the window itself and making it fixed size
 	w.Resize(fyne.NewSize(300, 630))
 
 	w.ShowAndRun()

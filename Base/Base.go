@@ -6,6 +6,7 @@ import (
 )
 
 func F32totext(text string) string {
+	// just taking the text or the input and decode it to normal text
 	decoded, err := base32.StdEncoding.DecodeString(text)
 	if text == "" {
 		return "Input Is Empty"

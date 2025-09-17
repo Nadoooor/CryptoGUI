@@ -10,32 +10,37 @@ import (
 	"github.com/getevo/hash"
 )
 
+// the hashing tab function
 func Hashing(History *fyne.Container, INPUT *widget.Entry, OUTPUT *widget.Entry, CIPHER *widget.Entry) *fyne.Container {
 	current := "blank"
+	// another background
 	background, _ := fyne.LoadResourceFromPath("Hashing.png")
 	back := canvas.NewImageFromResource(background)
 	back.FillMode = canvas.ImageFillStretch
 	back.Resize(fyne.NewSize(300, 600))
-
+	// UI components
 	in := widget.NewEntry()
 	in.Move(fyne.NewPos(35, 105))
 	in.Resize(fyne.NewSize(232, 40))
-
 	view := widget.NewMultiLineEntry()
-
 	view.Move(fyne.NewPos(35, 275))
 	view.Resize(fyne.NewSize(232, 175))
+	// the dropdown list that has all the options
 	ciphers := []string{"CRC32", "CRC64", "FNV-1a 32bit", "FNV-1a 64bit", "MD5", "SHA1", "SHA256", "SHA384", "SHA512"}
+	// the dropdown itself
 	drop := widget.NewSelect(ciphers, func(s string) {
 		current = s
 
 	})
 	drop.PlaceHolder = "Choose your Hash Type!!"
+	// moving and resizing
 	drop.Move(fyne.NewPos(35, 190))
 	drop.Resize(fyne.NewSize(229, 40))
 	view.Wrapping = fyne.TextWrapWord
 	view.SetMinRowsVisible(3)
+	// the encoding button
 	encode := widget.NewButton("Hash It!!", func() {
+		// the switch case that has all the hashes types
 		switch current {
 		case "CRC32":
 			view.SetText(hash.CRC32String(in.Text))
@@ -59,12 +64,13 @@ func Hashing(History *fyne.Container, INPUT *widget.Entry, OUTPUT *widget.Entry,
 			view.SetText("Choose your Hash Type!!")
 
 		}
+		// adding the info for this hashing process to the history
 		HistoryFs.HistoryFH(in, view, current, History, INPUT, OUTPUT, CIPHER)
 		History.Refresh()
 	})
 
 	encode.Resize(fyne.NewSize(230, 47))
 	encode.Move(fyne.NewPos(35, 495))
-
+	// returning the container that will be used in the main func
 	return container.NewWithoutLayout(back, in, view, drop, encode)
 }
