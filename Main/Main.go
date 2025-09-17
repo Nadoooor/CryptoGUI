@@ -17,35 +17,34 @@ import (
 )
 
 func main() {
+	// the app backbone
 	a := app.New()
 	w := a.NewWindow("CryptoGUI")
-
+	// some vars and ui components
 	current := "blank"
 	historyload := JOSN.Load()
 	HistoryWin, INPUT, OUTPUT, CIPHER, History := HistoryFs.HistoryWin(historyload)
-
 	background, _ := fyne.LoadResourceFromPath("CryptoGUI.png")
 	back := canvas.NewImageFromResource(background)
 	back.FillMode = canvas.ImageFillStretch
 	back.Resize(fyne.NewSize(300, 600))
-
 	in := widget.NewEntry()
 	in.Move(fyne.NewPos(35, 105))
 	in.Resize(fyne.NewSize(232, 40))
-
 	view := widget.NewMultiLineEntry()
-
 	view.Move(fyne.NewPos(35, 275))
 	view.Resize(fyne.NewSize(232, 175))
 	ciphers := []string{"Base64", "Base32", "Hex", "Binary"}
 	drop := widget.NewSelect(ciphers, func(s string) {
 		current = s
 	})
+	// the drop down sections it was kinda wierd but i got it
 	drop.PlaceHolder = "Select Cipher"
 	drop.Move(fyne.NewPos(35, 190))
 	drop.Resize(fyne.NewSize(229, 40))
 	view.Wrapping = fyne.TextWrapWord
 	view.SetMinRowsVisible(3)
+	// making the input entry to submit when i press enter
 	in.OnSubmitted = func(s string) {
 		switch current {
 
@@ -62,6 +61,7 @@ func main() {
 		}
 		HistoryFs.HistoryF(in, view, current, History, INPUT, OUTPUT, CIPHER)
 	}
+	// the decode button
 	decode := widget.NewButton("Decode", func() {
 		switch current {
 

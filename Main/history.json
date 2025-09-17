@@ -1,74 +1,122 @@
 [
   {
-    "TIMESTAMP": "2025-09-17 AM 02:34:37",
-    "INPUT": "spider",
-    "OUTPUT": "22ed8b76",
-    "CIPHER": "FNV-1a 32bit"
+    "TIMESTAMP": "2025-09-17 PM 17:28:36",
+    "INPUT": "alexandra",
+    "OUTPUT": "c80194cefba53b4a38d06e32f555e1c745038550992744a876ffbe495f4f93e1",
+    "CIPHER": "SHA256"
   },
   {
-    "TIMESTAMP": "2025-09-17 AM 02:38:29",
-    "INPUT": "spider",
-    "OUTPUT": "d8cf9015",
-    "CIPHER": "FNV-1a 32bit"
+    "TIMESTAMP": "2025-09-17 PM 17:30:29",
+    "INPUT": " alexandra",
+    "OUTPUT": "83bee07d75074439f51473a648a027d7a5646b53f789bd39bf7394f527a13d3d",
+    "CIPHER": "SHA256"
   },
   {
-    "TIMESTAMP": "2025-09-17 AM 02:39:22",
-    "INPUT": "spider ",
-    "OUTPUT": "d2d8e00a",
-    "CIPHER": "FNV-1a 32bit"
+    "TIMESTAMP": "2025-09-17 PM 17:31:04",
+    "INPUT": "!!$jahmybabyboy\r",
+    "OUTPUT": "e82f00c9952037ed6ae91d8fda435dfeda29f0f1d905ce913f09c29a21de818f",
+    "CIPHER": "SHA256"
   },
   {
-    "TIMESTAMP": "2025-09-17 AM 02:39:28",
-    "INPUT": "spider                                                  ",
-    "OUTPUT": "28db2ae3",
-    "CIPHER": "FNV-1a 32bit"
-  },
-  {
-    "TIMESTAMP": "2025-09-17 AM 02:44:58",
-    "INPUT": "spider",
-    "OUTPUT": "f525b6998b3e89fd4951d9963f34d691",
+    "TIMESTAMP": "2025-09-17 PM 17:31:32",
+    "INPUT": "!!$jahmybabyboy\r",
+    "OUTPUT": "53827b711b0e8aa838b6634a7b808972",
     "CIPHER": "MD5"
   },
   {
-    "TIMESTAMP": "2025-09-17 AM 02:46:15",
-    "INPUT": "spider",
-    "OUTPUT": "20116d9e5af501780dda7ebc1d3b2a95",
-    "CIPHER": "MD5"
-  },
-  {
-    "TIMESTAMP": "2025-09-17 AM 02:47:43",
-    "INPUT": "spider",
-    "OUTPUT": "f1a81d782dea6a19bdca383bffe68452",
-    "CIPHER": "MD5"
-  },
-  {
-    "TIMESTAMP": "2025-09-17 AM 03:03:45",
-    "INPUT": "spiderman",
-    "OUTPUT": "9f05aa4202e4ce8d6a72511dc735cce9",
-    "CIPHER": "MD5"
-  },
-  {
-    "TIMESTAMP": "2025-09-17 AM 03:05:38",
-    "INPUT": "123456789",
-    "OUTPUT": "25f9e794323b453885f5181f1b624d0b",
-    "CIPHER": "MD5"
-  },
-  {
-    "TIMESTAMP": "2025-09-17 AM 03:07:17",
+    "TIMESTAMP": "2025-09-17 PM 17:32:13",
     "INPUT": "john",
     "OUTPUT": "527bd5b5d689e2c32ae974c6229ff785",
     "CIPHER": "MD5"
   },
   {
-    "TIMESTAMP": "2025-09-17 AM 03:07:27",
-    "INPUT": "john",
-    "OUTPUT": "317ae996",
-    "CIPHER": "CRC32"
+    "TIMESTAMP": "2025-09-17 PM 19:49:19",
+    "INPUT": "!!$$k$$!!\r ",
+    "OUTPUT": "8450348f589a4bd4678e24502e582a15",
+    "CIPHER": "MD5"
   },
   {
-    "TIMESTAMP": "2025-09-17 AM 03:09:44",
-    "INPUT": "mark123",
-    "OUTPUT": "43d9423892ab14c9da8388f7036067fa0a15b5663e563f22d3383cfc933c1690",
-    "CIPHER": "SHA256"
+    "TIMESTAMP": "2025-09-17 PM 19:50:57",
+    "INPUT": "!!$$k$$!!\r",
+    "OUTPUT": "c90753afe9936e4bc922370ca4631ee2",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 19:52:18",
+    "INPUT": "!!$$k$$!!\r",
+    "OUTPUT": "c90753afe9936e4bc922370ca4631ee2",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 19:55:19",
+    "INPUT": "!!$$k$$!!\r",
+    "OUTPUT": "c90753afe9936e4bc922370ca4631ee2",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 19:57:23",
+    "INPUT": "!!$$k$$!!",
+    "OUTPUT": "499541b966f4362187d7b0390b37e740",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 19:58:52",
+    "INPUT": "!!$$k$$!!",
+    "OUTPUT": "499541b966f4362187d7b0390b37e740",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 19:58:53",
+    "INPUT": "!!$$k$$!!",
+    "OUTPUT": "499541b966f4362187d7b0390b37e740",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 19:58:53",
+    "INPUT": "!!$$k$$!!",
+    "OUTPUT": "499541b966f4362187d7b0390b37e740",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 19:59:03",
+    "INPUT": "!!$$k$$!!\r ",
+    "OUTPUT": "8450348f589a4bd4678e24502e582a15",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 19:59:08",
+    "INPUT": "!!$$k$$!!\r",
+    "OUTPUT": "c90753afe9936e4bc922370ca4631ee2",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 20:03:13",
+    "INPUT": "nader",
+    "OUTPUT": "422dee01fcbe1268cad32a639a2d9c93",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 20:03:39",
+    "INPUT": "Nader",
+    "OUTPUT": "fd4135ffc9a2da21f7196530ffa3a72a",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 20:04:04",
+    "INPUT": "hahahaha",
+    "OUTPUT": "4f0b36a34946153c358f8b243428a1eb",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 20:04:32",
+    "INPUT": "!!!queenie014!!!",
+    "OUTPUT": "c5567492d82b9f5e557489a8e656f878",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 PM 20:06:41",
+    "INPUT": " sergioteamo",
+    "OUTPUT": "3ebfedca1f471d0f7e26296b173acf60",
+    "CIPHER": "MD5"
   }
 ]

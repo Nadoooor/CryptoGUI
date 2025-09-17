@@ -2,21 +2,94 @@ package Brute
 
 import (
 	"bufio"
+	"context"
 	"fmt"
 	"os"
 	"strconv"
-	"time"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
+
 	"fyne.io/fyne/v2/widget"
 	"github.com/getevo/hash"
 )
 
+func compair(cancelFunc *context.CancelFunc, IN *widget.Entry, OUT *widget.Entry, path string, BruteIT *widget.Button, cancle *widget.Button, hashing func(v any) string) {
+	ctx, cancel2 := context.WithCancel(context.Background())
+	*cancelFunc = cancel2
+	go func() {
+		fyne.Do(func() {
+
+			BruteIT.Hide()
+			cancle.Show()
+		})
+		var thehash string = IN.Text
+		file, err := os.Open(path)
+		if err != nil {
+			fmt.Println("Error:", err)
+			return
+		}
+		defer file.Close()
+
+		scanner := bufio.NewScanner(file)
+		found := false
+		var counter int
+		var counter2 int
+		for scanner.Scan() {
+			select {
+			case <-ctx.Done():
+				fyne.Do(
+					func() {
+						OUT.SetText("Cancelled")
+					})
+				return
+			default:
+				counter++
+				counter2++
+				line := scanner.Text()
+
+				hashed := hashing(line)
+
+				if hashed == thehash {
+					fyne.Do(
+						func() {
+							OUT.SetText("CRACKED: " + line)
+							BruteIT.Show()
+							cancle.Hide()
+						},
+					)
+					found = true
+					return
+
+				}
+				if counter == 500 {
+					fyne.Do(func() {
+						OUT.SetText("Finshed: " + strconv.Itoa(counter2))
+					})
+					counter = 0
+				}
+
+			}
+		}
+		if !found {
+			fyne.Do(func() {
+				OUT.SetText("Couldn't Crack the Hash :(")
+				BruteIT.Show()
+				cancle.Hide()
+			})
+		}
+
+	}()
+}
+
 func Bruter(myWindow fyne.Window) *fyne.Container {
+
 	var current string
 	var path string
+	var BruteIT *widget.Button
+	var cancle *widget.Button
+	var cancelFunc context.CancelFunc
 	IN := widget.NewMultiLineEntry()
 	IN.Wrapping = fyne.TextWrapWord
 	IN.SetMinRowsVisible(3)
@@ -43,150 +116,46 @@ func Bruter(myWindow fyne.Window) *fyne.Container {
 	HASHES.Resize(fyne.NewSize(229, 40))
 	HASHES.Move(fyne.NewPos(35, 233))
 
-	BruteIT := widget.NewButton("Brute It!!", func() {
-		go func() {
-			var thehash string = IN.Text
-			file, err := os.Open(path)
-			if err != nil {
-				fmt.Println("Error:", err)
-				return
-			}
-			defer file.Close()
-			scanner := bufio.NewScanner(file)
+	BruteIT = widget.NewButton("Brute It!!", func() {
 
-			switch current {
-			case "CRC32":
+		switch current {
+		case "CRC32":
+			compair(&cancelFunc, IN, OUT, path, BruteIT, cancle, hash.CRC32String)
+		case "CRC64":
+			compair(&cancelFunc, IN, OUT, path, BruteIT, cancle, hash.CRC64String)
+		case "FNV-1a 32bit":
+			compair(&cancelFunc, IN, OUT, path, BruteIT, cancle, hash.FNV32String)
+		case "FNV-1a 64bit":
+			compair(&cancelFunc, IN, OUT, path, BruteIT, cancle, hash.FNV64String)
+		case "MD5":
+			compair(&cancelFunc, IN, OUT, path, BruteIT, cancle, hash.MD5)
+		case "SHA1":
+			compair(&cancelFunc, IN, OUT, path, BruteIT, cancle, hash.SHA1)
+		case "SHA256":
+			compair(&cancelFunc, IN, OUT, path, BruteIT, cancle, hash.SHA256)
+		case "SHA384":
+			compair(&cancelFunc, IN, OUT, path, BruteIT, cancle, hash.SHA384)
+		case "SHA512":
+			compair(&cancelFunc, IN, OUT, path, BruteIT, cancle, hash.SHA512)
+		default:
+			OUT.SetText("Choose your Hash Type!!")
 
-				for scanner.Scan() {
-					line := scanner.Text()
-					hashed := hash.CRC32String(line)
-					if hashed == thehash {
-						OUT.SetText("CRACKED: " + line)
-						break
-					} else {
-						OUT.SetText("Couldn't Crack :(")
-					}
-				}
-			case "CRC64":
+		}
 
-				for scanner.Scan() {
-					line := scanner.Text()
-					hashed := hash.CRC64String(line)
-					if hashed == thehash {
-						OUT.SetText("CRACKED: " + line)
-						break
-					} else {
-						OUT.SetText("Couldn't Crack :(")
-					}
-				}
-
-			case "FNV-1a 32bit":
-
-				for scanner.Scan() {
-					line := scanner.Text()
-					hashed := hash.FNV32String(line)
-
-					if hashed == thehash {
-						OUT.SetText("CRACKED: " + line)
-						break
-					} else {
-						OUT.SetText("Couldn't Crack :(")
-					}
-				}
-			case "FNV-1a 64bit":
-
-				for scanner.Scan() {
-					line := scanner.Text()
-					hashed := hash.FNV64String(line)
-					if hashed == thehash {
-						OUT.SetText("CRACKED: " + line)
-						break
-					} else {
-						OUT.SetText("Couldn't Crack :(")
-					}
-				}
-			case "MD5":
-				var counter int
-				var counter2 int
-				for scanner.Scan() {
-					counter++
-					counter2++
-					line := scanner.Text()
-					hashed := hash.MD5(line)
-					if counter != 5 {
-						if hashed == thehash {
-							OUT.SetText("CRACKED: " + line)
-							break
-						} else {
-							OUT.SetText("Couldn't Crack :(")
-						}
-					} else {
-						OUT.SetText("Finshed: " + strconv.Itoa(counter2))
-						time.Sleep(2 * time.Second)
-						counter = 0
-					}
-				}
-			case "SHA1":
-
-				for scanner.Scan() {
-					line := scanner.Text()
-					hashed := hash.SHA1(line)
-					if hashed == thehash {
-						OUT.SetText("CRACKED: " + line)
-						break
-					} else {
-						OUT.SetText("Couldn't Crack :(")
-					}
-				}
-			case "SHA256":
-
-				for scanner.Scan() {
-					line := scanner.Text()
-					hashed := hash.SHA256(line)
-					if hashed == thehash {
-						OUT.SetText("CRACKED: " + line)
-						break
-					} else {
-						OUT.SetText("Couldn't Crack :(")
-					}
-				}
-			case "SHA384":
-
-				for scanner.Scan() {
-					line := scanner.Text()
-					hashed := hash.SHA384(line)
-					if hashed == thehash {
-						OUT.SetText("CRACKED: " + line)
-						break
-					} else {
-						OUT.SetText("Couldn't Crack :(")
-					}
-				}
-			case "SHA512":
-
-				for scanner.Scan() {
-					line := scanner.Text()
-					hashed := hash.SHA512(line)
-					if hashed == thehash {
-						OUT.SetText("CRACKED: " + line)
-						break
-					} else {
-						OUT.SetText("Couldn't Crack :(")
-					}
-				}
-			default:
-				OUT.SetText("Choose your Hash Type!!")
-
-			}
-		}()
 	})
 	BruteIT.Resize(fyne.NewSize(231, 40))
 	BruteIT.Move(fyne.NewPos(35, 520))
-
+	cancle = widget.NewButton("Cancle", func() {
+		cancle.Hide()
+		BruteIT.Show()
+		cancelFunc()
+	})
+	cancle.Resize(fyne.NewSize(231, 40))
+	cancle.Move(fyne.NewPos(35, 520))
 	background2, _ := fyne.LoadResourceFromPath("CryptoGUIBrute.png")
 	back2 := canvas.NewImageFromResource(background2)
 	back2.FillMode = canvas.ImageFillStretch
 	back2.Resize(fyne.NewSize(300, 600))
 
-	return container.NewWithoutLayout(back2, IN, OUT, HASHES, BruteIT)
+	return container.NewWithoutLayout(back2, IN, OUT, HASHES, cancle, BruteIT)
 }
