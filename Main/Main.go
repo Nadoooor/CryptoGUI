@@ -3,7 +3,7 @@ package main
 import (
 	"CryptoGUI/Base"
 	"CryptoGUI/Binary"
-	"CryptoGUI/Guesser"
+	"CryptoGUI/Brute"
 	"CryptoGUI/Hashing"
 	"CryptoGUI/Hex"
 	HistoryFs "CryptoGUI/History"
@@ -19,6 +19,7 @@ import (
 func main() {
 	a := app.New()
 	w := a.NewWindow("CryptoGUI")
+
 	current := "blank"
 	historyload := JOSN.Load()
 	HistoryWin, INPUT, OUTPUT, CIPHER, History := HistoryFs.HistoryWin(historyload)
@@ -111,7 +112,7 @@ func main() {
 	container1 := container.NewWithoutLayout(back, in, view, drop, decode, encode)
 	tabs := container.NewAppTabs(
 		container.NewTabItem("Tool", container1),
-		container.NewTabItem("Guesser", Guesser.Guesser()),
+		container.NewTabItem("Brute", Brute.Bruter(w)),
 		container.NewTabItem("History", HistoryWin),
 		container.NewTabItem("Hashing", Hashing.Hashing(History, INPUT, OUTPUT, CIPHER)),
 	)

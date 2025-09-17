@@ -38,23 +38,23 @@ func Hashing(History *fyne.Container, INPUT *widget.Entry, OUTPUT *widget.Entry,
 	encode := widget.NewButton("Hash It!!", func() {
 		switch current {
 		case "CRC32":
-			view.SetText(hash.CRC32String(in))
+			view.SetText(hash.CRC32String(in.Text))
 		case "CRC64":
-			view.SetText(hash.CRC64String(in))
+			view.SetText(hash.CRC64String(in.Text))
 		case "FNV-1a 32bit":
-			view.SetText(hash.FNV32String(in))
+			view.SetText(hash.FNV32String(in.Text))
 		case "FNV-1a 64bit":
-			view.SetText(hash.FNV64String(in))
+			view.SetText(hash.FNV64String(in.Text))
 		case "MD5":
-			view.SetText(hash.MD5(in))
+			view.SetText(hash.MD5(in.Text))
 		case "SHA1":
-			view.SetText(hash.SHA1(in))
+			view.SetText(hash.SHA1(in.Text))
 		case "SHA256":
-			view.SetText(hash.SHA256(in))
+			view.SetText(hash.SHA256(in.Text))
 		case "SHA384":
-			view.SetText(hash.SHA384(in))
+			view.SetText(hash.SHA384(in.Text))
 		case "SHA512":
-			view.SetText(hash.SHA512(in))
+			view.SetText(hash.SHA512(in.Text))
 		default:
 			view.SetText("Choose your Hash Type!!")
 

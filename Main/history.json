@@ -1,1 +1,74 @@
-null
+[
+  {
+    "TIMESTAMP": "2025-09-17 AM 02:34:37",
+    "INPUT": "spider",
+    "OUTPUT": "22ed8b76",
+    "CIPHER": "FNV-1a 32bit"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 02:38:29",
+    "INPUT": "spider",
+    "OUTPUT": "d8cf9015",
+    "CIPHER": "FNV-1a 32bit"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 02:39:22",
+    "INPUT": "spider ",
+    "OUTPUT": "d2d8e00a",
+    "CIPHER": "FNV-1a 32bit"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 02:39:28",
+    "INPUT": "spider                                                  ",
+    "OUTPUT": "28db2ae3",
+    "CIPHER": "FNV-1a 32bit"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 02:44:58",
+    "INPUT": "spider",
+    "OUTPUT": "f525b6998b3e89fd4951d9963f34d691",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 02:46:15",
+    "INPUT": "spider",
+    "OUTPUT": "20116d9e5af501780dda7ebc1d3b2a95",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 02:47:43",
+    "INPUT": "spider",
+    "OUTPUT": "f1a81d782dea6a19bdca383bffe68452",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 03:03:45",
+    "INPUT": "spiderman",
+    "OUTPUT": "9f05aa4202e4ce8d6a72511dc735cce9",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 03:05:38",
+    "INPUT": "123456789",
+    "OUTPUT": "25f9e794323b453885f5181f1b624d0b",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 03:07:17",
+    "INPUT": "john",
+    "OUTPUT": "527bd5b5d689e2c32ae974c6229ff785",
+    "CIPHER": "MD5"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 03:07:27",
+    "INPUT": "john",
+    "OUTPUT": "317ae996",
+    "CIPHER": "CRC32"
+  },
+  {
+    "TIMESTAMP": "2025-09-17 AM 03:09:44",
+    "INPUT": "mark123",
+    "OUTPUT": "43d9423892ab14c9da8388f7036067fa0a15b5663e563f22d3383cfc933c1690",
+    "CIPHER": "SHA256"
+  }
+]
